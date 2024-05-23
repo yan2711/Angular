@@ -1,0 +1,31 @@
+<p-dialog
+  header="Новый клиент"
+  [modal]="true"
+  [(visible)]="isVisible"
+  (onHide)="closeDialog()"
+  [draggable]="false"
+  [style]="{ width: '25rem' }"
+>
+  <form [formGroup]="form" (submit)="userData ? updateUser() : createUser()">
+    <div>
+      <input formControlName="name" pInputText id="name" placeholder="Имя"/>
+    </div>
+
+    <div>
+      <input formControlName="surname" pInputText id="surname" placeholder="Фамилия"/>
+    </div>
+
+    <div>
+      <input formControlName="email" pInputText id="email" placeholder="Email"/>
+    </div>
+
+    <div>
+      <input formControlName="phone" pInputText id="phone" placeholder="Номер"/>
+    </div>
+
+    <div class="btns-add__list">
+      <p-button label="Отмена" severity="secondary" />
+      <p-button label="Сохранить" [disabled]="form.invalid" type="submit" />
+    </div>
+  </form>
+</p-dialog>

@@ -1,0 +1,43 @@
+
+<h3 class="users-list__title">Клиенты</h3>
+
+<section class="users-list">
+
+  <div class="users-list__content-wrapper">
+    <!-- Контрольная панель -->
+    <div class="users-list__control-panel">
+      <button (click)="toggleUserDialogVisibilityState(true)" class="btn-add" 
+      style="border: 1px solid blue; width: 75px; height: 35px; font-size: 15px;"
+      >Добавить</button>
+      |
+      <button
+        [disabled]="!selectedUsers.length"
+        (click)="confirmUsersDelete($event)"
+        style="width: 70px; height: 35px; font-size: 15px; "
+      >
+        Удалить
+      </button>
+    </div>
+    <!-- Cписок пользователей -->
+    <app-users-list-table
+      *ngIf="users.length"
+      [users]="users"
+      (editUserEvent)="
+        setEditableUser($event); toggleUserDialogVisibilityState(true)
+      "
+      (usersSelectionEvent)="setSelectedUsers($event)"
+    ></app-users-list-table>
+  </div>
+</section>
+
+<app-add-user-dialog
+  *ngIf="isAddUserDialogVisible"
+  [isVisible]="isAddUserDialogVisible"
+  (closeEvent)="toggleUserDialogVisibilityState(false)"
+  (createUserEvent)="createUser($event)"
+  (updateUserEvent)="updateUser($event)"
+  [userData]="editableUserData"
+>
+</app-add-user-dialog>
+
+<p-confirmDialog />

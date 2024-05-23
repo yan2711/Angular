@@ -1,0 +1,53 @@
+.tags{
+    display: block;
+}
+
+.p-dialog .p-dialog-content:last-of-type {
+    text-align: left;
+}
+
+.p-inputtext{
+    margin-bottom: 10px;
+}
+
+.p-inputtext{
+    
+    margin-left: 56px;
+    border-radius: 0;
+    height: 35px;
+    width: 70%;
+    padding-left: 10px;
+}
+
+.btns-add__list{
+    margin-left: 40%;
+}
+
+.p-button{ 
+    margin-right: 13px;
+    padding: 4%;
+    margin-bottom: 10px;
+    margin-bottom: 50px;
+}
+
+.p-button.p-button-secondary{
+    background-color: #fff;
+    color: rgba(47, 103, 213, 1);
+    border: none;
+}
+
+.p-dialog .p-dialog-header .p-dialog-title {
+    margin-left: 56px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.p-dialog .p-dialog-header {
+    border-top-right-radius: 23px;
+    border-top-left-radius: 23px;
+}
+
+.p-dialog .p-dialog-content:last-of-type {
+    border-bottom-right-radius: 23px;
+    border-bottom-left-radius: 23px;
+}
